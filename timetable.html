@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timetable - Ngee Ann Polytechnic</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        header {
+            background-color: #004080;
+            color: #fff;
+            padding: 1rem 2rem;
+            text-align: center;
+        }
+        nav {
+            display: flex;
+            justify-content: space-around;
+            background-color: #0056b3;
+            padding: 0.5rem 0;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: #ffcc00;
+        }
+
+        .date-selector {
+            display: flex;
+            justify-content: space-between;
+            margin: 1rem;
+        }
+
+        .date-selector button {
+            flex: 1;
+            padding: 0.5rem;
+            margin: 0 0.25rem;
+            background: #fff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            color: #333;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .date-selector button.active {
+            background: #5a4fb3;
+            color: #fff;
+        }
+
+        .date-selector button:hover {
+            background: #d8d8f0;
+        }
+
+        .schedule {
+            margin: 1rem;
+        }
+
+        .schedule-item {
+            background: #fff;
+            border-left: 5px solid #5a4fb3;
+            margin: 1rem 0;
+            padding: 1rem;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .schedule-item h3 {
+            margin: 0;
+            color: #5a4fb3;
+            font-size: 1.2rem;
+        }
+
+        .schedule-item p {
+            margin: 0.5rem 0;
+            color: #666;
+        }
+
+        .bottom-nav {
+            display: flex;
+            justify-content: space-around;
+            padding: 0.5rem 0;
+            background: #fff;
+            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .bottom-nav a {
+            text-decoration: none;
+            color: #5a4fb3;
+            font-size: 0.9rem;
+            text-align: center;
+        }
+
+        .bottom-nav a span {
+            display: block;
+            font-size: 1.5rem;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Timetable</h1>
+    <p>Thursday, 28 November</p>
+</header>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="timetable.html">Timetable</a>
+    <a href="attendance.html">Attendance</a>
+    <a href="homework.html">Homework Due</a>
+</nav>
+
+
+
+<div class="date-selector">
+    <button>Mon 25</button>
+    <button>Tue 26</button>
+    <button>Wed 27</button>
+    <button class="active">Thu 28</button>
+    <button>Fri 29</button>
+    <button>Sat 30</button>
+</div>
+
+<div class="schedule">
+    <div class="schedule-item">
+        <h3>1:00 PM - 2:00 PM</h3>
+        <p>Front-End Development</p>
+        <p>Location: BLK 27 #04-02</p>
+        <p>Duration: 1h</p>
+    </div>
+    <div class="schedule-item">
+        <h3>2:00 PM - 4:00 PM</h3>
+        <p>Front-End Development</p>
+        <p>Location: BLK 27 #04-02</p>
+        <p>Duration: 2h</p>
+    </div>
+    <div class="schedule-item">
+        <h3>4:00 PM - 5:00 PM</h3>
+        <p>Pastoral Care Hours</p>
+        <p>Location: BLK 27 #04-02</p>
+        <p>Duration: 1h</p>
+    </div>
+</div>
+
+<div class="bottom-nav">
+    <a href="index.html"><span>🏠</span>Home</a>
+    <a href="attendance.html"><span>🗂️</span>Attendance</a>
+    <a href="#"><span>📅</span>Timetable</a>
+    <a href="homework.html"><span>📝</span>Homework</a>
+</div>
+
+</body>
+</html>

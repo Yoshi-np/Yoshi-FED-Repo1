@@ -1,43 +1,130 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ngee Ann Student Portal</title>
     <style>
-        .website li {margin-bottom:15px ;}
-            
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+        header {
+            background-color: #004080;
+            color: #fff;
+            padding: 1rem 2rem;
+            text-align: center;
+        }
+        nav {
+            display: flex;
+            justify-content: space-around;
+            background-color: #0056b3;
+            padding: 0.5rem 0;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: #ffcc00;
+
+        }
         
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+        .features {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 1rem;
+        }
+        .feature-card {
+            flex: 1 1 calc(33.333% - 1rem);
+            background: #fff;
+            padding: 1rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+        .feature-card h3 {
+            color: #004080;
+        }
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background: #004080;
+            color: #fff;
+            margin-top: 2rem;
+        }
+        @media (max-width: 768px) {
+            .feature-card {
+                flex: 1 1 100%;
+            }
+        }
     </style>
-  <head>
-    <title>Banger website</title>
-    <!-- <meta name="description"content="Free web tutorials">
-    <meta name="keywords" content="HTML, CSS, JavaScript">
-    <meta name="author" content="BUddy"> -->
-  </head>
-  <body bgcolor="lightyellow">
-    <center>
-        <h1>Website name or smt</h1>
-    </center>
-    <hr>
-    <center>
-        <img src="C:\Users\Flipp\OneDrive\Desktop\FED\wk02\wk02\CAs\FED_Yoshi\Img.jpg"  width="1000" height="750" alt="If there is no image, Just imagine one">
-    </center>
-    <p>
-        <h2>Placeholder1</h2>
-        <font size="4">
-            <ul>
-                <li>Desc1</li>
-            </ul>
-        </font>
-        <h2>Placeholder2</h2>
-        <font size="4">
-            <ul>
-                <li>Desc2</li> 
-            </ul>
-        </font>
-        <h2 ><b>Placeholder3</b>:</h2>
-        <font size="4">
-            <ul>
-                <li>Desc3</li>
-            </ul>
-        </font>
-    <p/>
-  </body>
+</head>
+<body>
+    <header>
+        <h1>Ngee Ann Polytechnic Student Portal</h1>
+        <p>Your one-stop platform for campus and study management</p>
+    </header>
+
+    <nav>
+        <a href="#timetable">Timetable</a>
+        <a href="#attendance">Attendance</a>
+        <a href="#homework">Homework</a>
+        <a href="#contact">Contact Us</a>
+    </nav>
+
+    <div class="container">
+        <section class="features">
+            <div class="feature-card" id="timetable">
+                <h3>Timetable</h3>
+                <p>View your daily and weekly schedule at a glance. Stay on top of your classes and commitments.</p>
+                <button onclick="location.href='timetable.html'">Go to Timetable</button>
+                <p id="current-date"></p>
+            </div>
+            <div class="feature-card" id="attendance">
+                <h3>Attendance</h3>
+                <p>Track your attendance records easily and ensure you're meeting attendance requirements.</p>
+                <button onclick="location.href='attendance.html'">Go to Attendance</button>
+            </div>
+            <div class="feature-card" id="homework">
+                <h3>Homework Due</h3>
+                <p>Never miss a deadline. Keep track of all your assignments in one place.</p>
+                <button onclick="location.href='homework.html'">Go to Homework</button>
+            </div>
+        </section>
+    </div>
+
+    <footer id="contact">
+        <p>&copy; 2024 WebBuild Co. | Empowering Education Through Technology</p>
+        <p>Contact us at <a href="mailto:support@webbuildco.com">support@webbuildco.com</a></p>
+    </footer>
+
+    <script>
+        function showDate() {
+            const dateElement = document.getElementById('current-date');
+            const today = new Date();
+            dateElement.textContent = `Today is: ${today.toDateString()}`;
+        }
+
+        function showAlert() {
+            alert('Reminder: Submit your assignments on time!');
+        }
+    </script>
+</body>
 </html>
