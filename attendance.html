@@ -4,35 +4,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Attendance - Ngee Ann Student Portal</title>
-    ..
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f9;
-            color: #333;
+            background-color: #1a1a1a; /* Matches dark background of the index page */
+            color: #e6e6e6; /* Light gray for readability */
         }
         header {
-            background-color: #004080;
-            color: #fff;
+            background-color: #333333; /* Dark background for header */
+            color: #ffffff; /* White text for contrast */
             padding: 1rem 2rem;
             text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
         }
         nav {
             display: flex;
             justify-content: space-around;
-            background-color: #0056b3;
+            background-color: #262626; /* Matches dark navbar style */
             padding: 0.5rem 0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
         }
         nav a {
-            color: #fff;
+            color: #bebebe; /* Light gray for navbar links */
             text-decoration: none;
             font-size: 1rem;
             transition: color 0.3s;
         }
         nav a:hover {
-            color: #ffcc00;
+            color: #ffffff; /* White hover effect for navbar links */
         }
         .container {
             max-width: 1200px;
@@ -40,38 +41,51 @@
             padding: 0 1rem;
         }
         .attendance-section {
-            background: #fff;
+            background: #262626; /* Matches feature-card background */
             padding: 2rem;
             border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
             text-align: center;
         }
         .attendance-section h2 {
-            color: #004080;
+            color: #ffffff; /* Matches header text color */
             margin-bottom: 1rem;
         }
         table {
             width: 100%;
             border-collapse: collapse;
             margin: 2rem 0;
+            background: #333333; /* Dark background for table */
+            color: #e6e6e6; /* Light text for table content */
         }
         table, th, td {
-            border: 1px solid #ddd;
+            border: 1px solid #444444; /* Subtle border for table */
         }
         th, td {
             padding: 0.75rem;
             text-align: center;
         }
         th {
-            background-color: #004080;
-            color: white;
+            background-color: #262626; /* Dark header for table */
+            color: #ffffff; /* White text for header */
+        }
+        tr:nth-child(even) {
+            background-color: #1a1a1a; /* Alternate row color for better readability */
         }
         footer {
             text-align: center;
             padding: 1rem;
-            background: #004080;
-            color: #fff;
+            background: #262626; /* Darker footer for consistency */
+            color: #e6e6e6;
             margin-top: 2rem;
+            border-top: 2px solid #6f67ab; /* Accent color */
+        }
+        footer a {
+            color: #6f67ab;
+            text-decoration: none;
+        }
+        footer a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
