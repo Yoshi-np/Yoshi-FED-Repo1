@@ -10,65 +10,96 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f9;
-            color: #333;
+            background-color: #1a1a1a; /* Matches the dark background of the image */
+            color: #e6e6e6; /* Light gray for readability */
         }
+
         header {
-            background-color: #004080;
-            color: #fff;
-            padding: 1rem 2rem;
+            background-image: url('images/whatsapp bg.jpg'); /* Your background image */
+            background-size: cover;
+            background-position: center;
+            color: #ffffff; /* White text for contrast */
+            padding: 2rem 2rem;
             text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5); /* Subtle shadow for depth */
         }
+
         nav {
             display: flex;
             justify-content: space-around;
-            background-color: #0056b3;
+            background-color: #333333; /* Darker shade for navbar */
             padding: 0.5rem 0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
         }
+
         nav a {
-            color: #fff;
+            color: #bebebe; /* Bright yellow for visibility and harmony with the theme */
             text-decoration: none;
             font-size: 1rem;
             transition: color 0.3s;
         }
-        nav a:hover {
-            color: #ffcc00;
 
+        nav a:hover {
+            color: #ffffff; /* White for hover effect */
         }
-        
+
         .container {
             max-width: 1200px;
             margin: 2rem auto;
             padding: 0 1rem;
         }
+
         .features {
             display: flex;
             flex-wrap: wrap;
             justify-content: space-between;
             gap: 1rem;
         }
+
         .feature-card {
             flex: 1 1 calc(33.333% - 1rem);
-            background: #fff;
-            padding: 1rem;
+            background: #262626; /* Slightly lighter dark shade */
+            padding: 1.5rem;
             border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5); /* Subtle shadow */
+            text-decoration: none;
             text-align: center;
-            transition: transform 0.3s;
+            transition: transform 0.3s, background 0.3s;
+            cursor: pointer;
         }
+
         .feature-card:hover {
             transform: translateY(-5px);
+            background: #333333; /* Darker shade on hover */
         }
+
         .feature-card h3 {
-            color: #004080;
+            color: #ffffff; /* Matches the navbar link color */
+            margin-bottom: 0.5rem;
         }
+
+        .feature-card p {
+            color: #e6e6e6; /* Light gray for descriptions */
+        }
+
         footer {
             text-align: center;
             padding: 1rem;
-            background: #004080;
-            color: #fff;
+            background: #333333; /* Darker footer for consistency */
+            color: #e6e6e6;
             margin-top: 2rem;
+            border-top: 2px solid #ffcc00; /* Accent color */
         }
+
+        footer a {
+            color: #ffcc00;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
         @media (max-width: 768px) {
             .feature-card {
                 flex: 1 1 100%;
@@ -79,7 +110,7 @@
 <body>
     <header>
         <h1>Ngee Ann Polytechnic Student Portal</h1>
-        <p>Your one-stop platform for campus and study management</p>
+        <p>Your one-stop platform for study management</p>
     </header>
 
     <nav>
@@ -91,40 +122,24 @@
 
     <div class="container">
         <section class="features">
-            <div class="feature-card" id="timetable">
+            <a href="timetable.html" class="feature-card" id="timetable">
                 <h3>Timetable</h3>
                 <p>View your daily and weekly schedule at a glance. Stay on top of your classes and commitments.</p>
-                <button onclick="location.href='timetable.html'">Go to Timetable</button>
-                <p id="current-date"></p>
-            </div>
-            <div class="feature-card" id="attendance">
+            </a>
+            <a href="attendance.html" class="feature-card" id="attendance">
                 <h3>Attendance</h3>
                 <p>Track your attendance records easily and ensure you're meeting attendance requirements.</p>
-                <button onclick="location.href='attendance.html'">Go to Attendance</button>
-            </div>
-            <div class="feature-card" id="homework">
+            </a>
+            <a href="homework.html" class="feature-card" id="homework">
                 <h3>Homework Due</h3>
                 <p>Never miss a deadline. Keep track of all your assignments in one place.</p>
-                <button onclick="location.href='homework.html'">Go to Homework</button>
-            </div>
+            </a>
         </section>
     </div>
 
     <footer id="contact">
-        <p>&copy; 2024 WebBuild Co. | Empowering Education Through Technology</p>
-        <p>Contact us at <a href="mailto:support@webbuildco.com">support@webbuildco.com</a></p>
+        <p>&copy; footer</p>
+        <p>Contact us at <a href="mailto:support@webbuildco.com">flopper.com</a></p>
     </footer>
-
-    <script>
-        function showDate() {
-            const dateElement = document.getElementById('current-date');
-            const today = new Date();
-            dateElement.textContent = `Today is: ${today.toDateString()}`;
-        }
-
-        function showAlert() {
-            alert('Reminder: Submit your assignments on time!');
-        }
-    </script>
 </body>
 </html>

@@ -9,30 +9,35 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f9f9f9;
-            color: #333;
+            background-color: #1a1a1a; /* Matches the dark background of the index.html */
+            color: #e6e6e6; /* Light gray for readability */
         }
 
         header {
-            background-color: #004080;
-            color: #fff;
+            background-color: #262626; /* Slightly lighter dark shade */
+            color: #ffffff; /* White text for contrast */
             padding: 1rem 2rem;
             text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5); /* Subtle shadow for depth */
         }
+
         nav {
             display: flex;
             justify-content: space-around;
-            background-color: #0056b3;
+            background-color: #333333; /* Darker shade for navbar */
             padding: 0.5rem 0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
         }
+
         nav a {
-            color: #fff;
+            color: #bebebe; /* Matches navbar link color in index.html */
             text-decoration: none;
             font-size: 1rem;
             transition: color 0.3s;
         }
+
         nav a:hover {
-            color: #ffcc00;
+            color: #ffffff; /* White for hover effect */
         }
 
         .date-selector {
@@ -45,21 +50,26 @@
             flex: 1;
             padding: 0.5rem;
             margin: 0 0.25rem;
-            background: #fff;
-            border: 1px solid #ccc;
+            background: #262626; /* Matches the darker shade */
+            border: 1px solid #444; /* Subtle border */
             border-radius: 5px;
-            color: #333;
+            color: #e6e6e6; /* Light gray text */
             cursor: pointer;
-            transition: background 0.3s;
+            transition: background 0.3s, color 0.3s;
         }
 
         .date-selector button.active {
-            background: #5a4fb3;
-            color: #fff;
+            background: #5a4fb3; /* Highlight color */
+            color: #fff; /* White text */
         }
 
         .date-selector button:hover {
-            background: #d8d8f0;
+            background: #444; /* Darker shade on hover */
+        }
+        
+        .date-selector button.active:hover {
+            background: #6f67ab; /* Keep the same background color */
+            color: #fff; /* Keep the same text color */
         }
 
         .schedule {
@@ -67,30 +77,30 @@
         }
 
         .schedule-item {
-            background: #fff;
-            border-left: 5px solid #5a4fb3;
+            background: #262626; /* Matches the darker background */
+            border-left: 5px solid #5a4fb3; /* Highlight color */
             margin: 1rem 0;
             padding: 1rem;
             border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5); /* Subtle shadow */
         }
 
         .schedule-item h3 {
             margin: 0;
-            color: #5a4fb3;
+            color: #ffffff; /* Matches the navbar link color */
             font-size: 1.2rem;
         }
 
         .schedule-item p {
             margin: 0.5rem 0;
-            color: #666;
+            color: #e6e6e6; /* Light gray for descriptions */
         }
 
         .bottom-nav {
             display: flex;
             justify-content: space-around;
             padding: 0.5rem 0;
-            background: #fff;
+            background: #262626; /* Matches darker background */
             box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
             position: fixed;
             bottom: 0;
@@ -99,7 +109,7 @@
 
         .bottom-nav a {
             text-decoration: none;
-            color: #5a4fb3;
+            color: #bebebe; /* Matches the navbar link color */
             font-size: 0.9rem;
             text-align: center;
         }
@@ -108,13 +118,17 @@
             display: block;
             font-size: 1.5rem;
         }
+
+        .bottom-nav a:hover {
+            color: #ffffff; /* White for hover effect */
+        }
     </style>
 </head>
 <body>
 
 <header>
     <h1>Timetable</h1>
-    <p>Thursday, 28 November</p>
+    <p id="current-day">Monday, 25 November</p>
 </header>
 
 <nav>
@@ -124,36 +138,19 @@
     <a href="homework.html">Homework Due</a>
 </nav>
 
-
-
 <div class="date-selector">
-    <button>Mon 25</button>
-    <button>Tue 26</button>
-    <button>Wed 27</button>
-    <button class="active">Thu 28</button>
-    <button>Fri 29</button>
-    <button>Sat 30</button>
+    <button onclick="updateActive(this); updateSchedule('Monday')">Mon 25</button>
+    <button onclick="updateActive(this); updateSchedule('Tuesday')">Tue 26</button>
+    <button onclick="updateActive(this); updateSchedule('Wednesday')">Wed 27</button>
+    <button class="active" onclick="updateActive(this); updateSchedule('Thursday')">Thu 28</button>
+    <button onclick="updateActive(this); updateSchedule('Friday')">Fri 29</button>
+    <button onclick="updateActive(this); updateSchedule('Saturday')">Sat 30</button>
+    <button onclick="updateActive(this); updateSchedule('Sunday')">Sun 31</button>
 </div>
 
-<div class="schedule">
-    <div class="schedule-item">
-        <h3>1:00 PM - 2:00 PM</h3>
-        <p>Front-End Development</p>
-        <p>Location: BLK 27 #04-02</p>
-        <p>Duration: 1h</p>
-    </div>
-    <div class="schedule-item">
-        <h3>2:00 PM - 4:00 PM</h3>
-        <p>Front-End Development</p>
-        <p>Location: BLK 27 #04-02</p>
-        <p>Duration: 2h</p>
-    </div>
-    <div class="schedule-item">
-        <h3>4:00 PM - 5:00 PM</h3>
-        <p>Pastoral Care Hours</p>
-        <p>Location: BLK 27 #04-02</p>
-        <p>Duration: 1h</p>
-    </div>
+
+<div class="schedule" id="schedule">
+    <!-- The timetable will dynamically update here -->
 </div>
 
 <div class="bottom-nav">
@@ -162,6 +159,56 @@
     <a href="#"><span>📅</span>Timetable</a>
     <a href="homework.html"><span>📝</span>Homework</a>
 </div>
+<script>
+    const schedules = {
+        Monday: [
+            { time: "9:00 AM - 10:00 AM", subject: "Math Lecture", location: "BLK 21 #03-05", duration: "1h" },
+            { time: "10:00 AM - 12:00 PM", subject: "Programming", location: "BLK 27 #04-02", duration: "2h" },
+        ],
+        Tuesday: [
+            { time: "11:00 AM - 1:00 PM", subject: "Physics", location: "BLK 25 #02-01", duration: "2h" },
+        ],
+        Wednesday: [
+            { time: "1:00 PM - 3:00 PM", subject: "Chemistry", location: "BLK 19 #01-01", duration: "2h" },
+        ],
+        Thursday: [
+            { time: "2:00 PM - 4:00 PM", subject: "Front-End Development", location: "BLK 27 #04-02", duration: "2h" },
+        ],
+        Friday: [
+            { time: "9:00 AM - 11:00 AM", subject: "Group Project", location: "BLK 22 #02-03", duration: "2h" },
+        ],
+    };
+
+    function updateActive(button) {
+        const buttons = document.querySelectorAll('.date-selector button');
+        buttons.forEach(btn => btn.classList.remove('active')); // Remove active class from all buttons
+        button.classList.add('active'); // Add active class to the clicked button
+    }
+
+    function updateSchedule(day) {
+        const scheduleDiv = document.getElementById("schedule");
+        scheduleDiv.innerHTML = ""; // Clear existing schedule
+
+        if (schedules[day]) {
+            schedules[day].forEach(item => {
+                const scheduleItem = `
+                    <div class="schedule-item">
+                        <h3>${item.time}</h3>
+                        <p>${item.subject}</p>
+                        <p>Location: ${item.location}</p>
+                        <p>Duration: ${item.duration}</p>
+                    </div>`;
+                scheduleDiv.innerHTML += scheduleItem;
+            });
+        } else {
+            scheduleDiv.innerHTML = "<p>No schedule available for this day.</p>";
+        }
+    }
+
+    // Initialize with Thursday's schedule as it's currently active
+    updateSchedule("Thursday");
+</script>
+
 
 </body>
 </html>
