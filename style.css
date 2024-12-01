@@ -7,13 +7,7 @@
             color: #e6e6e6; /* Light gray for readability */
         }
         
-        /* header {
-            background-color: #333333; 
-            color: #ffffff; 
-            padding: 1rem 2rem;
-            text-align: center;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
-        } */
+
         header {
             background-image: url('images/lightened background.jpg'); /* Your background image */
             background-size: cover;
@@ -23,13 +17,7 @@
             text-align: center;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5); /* Subtle shadow for depth */
         }
-            /* header {
-            background-color: #262626; 
-            color: #ffffff; 
-            padding: 1rem 2rem;
-            text-align: center;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5); 
-        }  */
+
         h2 {
             margin-left: 10px;
         }
@@ -103,37 +91,6 @@
             text-decoration: underline;
         }
 
-        /* footer {
-            text-align: center;
-            padding: 1rem;
-            background: #333333; 
-            color: #e6e6e6;
-            margin-top: 2rem;
-            border-top: 2px solid #6f67ab;
-        }
-
-        footer a {
-            color: #6f67ab;
-            text-decoration: none;
-        }
-
-        footer a:hover {
-            text-decoration: underline;
-        } */
-    
-
-        /*break*/
-
-
-/* 
-        nav {
-            display: flex;
-            justify-content: space-around;
-            background-color: #333333; 
-            padding: 0.5rem 0;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-        } */
-
 
         .container {
             max-width: 1200px;
@@ -181,18 +138,6 @@
                 flex: 1 1 100%;
             }
         }
-    
-        /*break*/
-
-
-
-        /* nav {
-            display: flex;
-            justify-content: space-around;
-            background-color: #333333; 
-            padding: 0.5rem 0;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-        } */
 
         .l-arrow-button {
             display:flex;
@@ -248,6 +193,7 @@
 
         .schedule {
             margin: 1rem;
+            overflow-y: auto;
         }
 
         .schedule-item {
@@ -301,111 +247,96 @@
 
 
 
+            
+    .todo-list {
+        list-style: none;
+        padding: 0;
+        margin: 20px 10px;
+        text-align: left;
+        max-height: 200px; /* Set max height */
+        overflow-y: auto; /* Enable scrolling if too many tasks */
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 10px;
+        padding: 10px;
+        background: rgba(0, 0, 0, 0.2); /* Slightly dark background */
+    }
+
+    .todo-list li {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 10px 10px;
+        font-size: 1em;
+        padding: 10px;
+        background: rgba(255, 255, 255, 0.1); /* Light background for tasks */
+        border-radius: 8px;
+        transition: transform 0.3s, background-color 0.3s;
+    }
+
+    .todo-list li input[type="checkbox"] {
+        margin-right: 10px; /* Add spacing between checkbox and text */
+    }
+
+    .todo-list li:hover {
+        transform: scale(1.02);
+        background: rgba(255, 255, 255, 0.2); /* Highlight on hover */
+    }
+
+
+    /* Input Container */
+    .todo-input-container {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-top: 10px;
+        margin-left: 10px;
+        color: white;
+    }
+
+    .todo-input-container input {
+        flex-grow: 1;
+        padding: 10px;
+        font-size: 1em;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        border-radius: 8px;
+        background: rgba(0, 0, 0, 0.1);
+        color: white;
+    }
+
+    .todo-input-container input::placeholder {
+        color: white; /* Set placeholder text color to white */
+        opacity: 1; /* Ensure the placeholder is fully opaque */
+    }
+
+
+    .rem-task-button{
+        font-size: 1em;
+        font-weight: bold;
+        color: white;
+        background-color: #c00000; /* red button */
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background-color 0.3s, transform 0.2s;
+    }
+
+
+    .todo-input-container button {
+        padding: 10px 20px;
+        font-size: 1em;
+        font-weight: bold;
+        color: white;
+        background-color: #77dd77; /* Green button */
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background-color 0.3s, transform 0.2s;
+    }
+
+    .todo-input-container button:hover {
+        background-color: #66cc66; /* Lighter green on hover */
+        transform: scale(1.05);
+    }
+
+            
         
-.todo-list {
-    list-style: none;
-    padding: 0;
-    margin: 20px 10px;
-    text-align: left;
-    max-height: 200px; /* Set max height */
-    overflow-y: auto; /* Enable scrolling if too many tasks */
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 10px;
-    padding: 10px;
-    background: rgba(0, 0, 0, 0.2); /* Slightly dark background */
-}
-
-/* Individual Task Styles */
-/* Individual Task Styles */
-.todo-list li {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 10px 10px;
-    font-size: 1em;
-    padding: 10px;
-    background: rgba(255, 255, 255, 0.1); /* Light background for tasks */
-    border-radius: 8px;
-    transition: transform 0.3s, background-color 0.3s;
-}
-
-.todo-list li input[type="checkbox"] {
-    margin-right: 10px; /* Add spacing between checkbox and text */
-}
-
-.todo-list li:hover {
-    transform: scale(1.02);
-    background: rgba(255, 255, 255, 0.2); /* Highlight on hover */
-}
-/* Task Status Styles */
-.task-status {
-    font-size: 0.9em;
-    color: #FFD700; /* Default gold color for statuses */
-    padding: 2px 8px;
-    border-radius: 5px;
-    background: rgba(255, 223, 0, 0.2); /* Light background for status */
-}
-
-/* Different Status Colors */
-.task-status.urgent {
-    color: #ff4c4c; /* Red for urgent tasks */
-    background: rgba(255, 76, 76, 0.2);
-}
-
-/* Input Container */
-.todo-input-container {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-top: 10px;
-    margin-left: 10px;
-    color: white;
-}
-
-.todo-input-container input {
-    flex-grow: 1;
-    padding: 10px;
-    font-size: 1em;
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    border-radius: 8px;
-    background: rgba(0, 0, 0, 0.1);
-    color: white;
-}
-
-.todo-input-container input::placeholder {
-    color: white; /* Set placeholder text color to white */
-    opacity: 1; /* Ensure the placeholder is fully opaque */
-}
-
-
-.rem-task-button{
-    font-size: 1em;
-    font-weight: bold;
-    color: white;
-    background-color: #c00000; /* red button */
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background-color 0.3s, transform 0.2s;
-}
-
-
-.todo-input-container button {
-    padding: 10px 20px;
-    font-size: 1em;
-    font-weight: bold;
-    color: white;
-    background-color: #77dd77; /* Green button */
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background-color 0.3s, transform 0.2s;
-}
-
-.todo-input-container button:hover {
-    background-color: #66cc66; /* Lighter green on hover */
-    transform: scale(1.05);
-}
-
-        
-    
