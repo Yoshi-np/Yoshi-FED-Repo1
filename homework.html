@@ -1,45 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Homework To-Do List</title>
+    <title>To-Do List</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <header>
-        <h1>Homework To-Do List</h1>
+        <h1>Task Manager</h1>
+        <p>Organize your tasks efficiently</p>
     </header>
+
     <nav>
         <a href="index.html">Home</a>
         <a href="timetable.html">Timetable</a>
         <a href="attendance.html">Attendance</a>
+        <a href="homework.html">Homework</a>
     </nav>
-    <div class="container">
-        <section class="to-do-section">
-            <h2>Your Tasks</h2>
-            <p>Stay organized and track your homework effectively.</p>
-            <div class="to-do-list">
-                <div class="task-item">
-                    <h3>Mathematics</h3>
-                    <p>Assignment: Algebra Worksheet</p>
-                    <p>Due Date: <span class="due-date">03/11/2024</span></p>
-                </div>
-                <div class="task-item">
-                    <h3>Computer Science</h3>
-                    <p>Assignment: Project Proposal</p>
-                    <p>Due Date: <span class="due-date">05/11/2024</span></p>
-                </div>
-                <div class="task-item">
-                    <h3>History</h3>
-                    <p>Assignment: Essay on World War II</p>
-                    <p>Due Date: <span class="due-date">10/11/2024</span></p>
-                </div>
+
+    <main>
+        <section class="card">
+            <h2>Today's Goals</h2>
+            <ul id="todoList" class="todo-list">
+                <li>
+                    <input type="checkbox"> Finish reading Chapter 3
+                    <button class="rem-task-button" onclick="deleteTask(this)">Remove Task</button>
+                </li>
+                <li>
+                    <input type="checkbox"> Review math problems
+                    <button class="rem-task-button" onclick="deleteTask(this)">Remove Task</button>
+                </li>
+                <li>
+                    <input type="checkbox"> Complete English essay
+                    <button class="rem-task-button" onclick="deleteTask(this)">Remove Task</button>
+                </li>
+                <li>
+                    <input type="checkbox"> Prepare for science presentation
+                    <button class="rem-task-button" onclick="deleteTask(this)">Remove Task</button>
+                </li>
+                <li>
+                    <input type="checkbox"> Organize study notes
+                    <button class="rem-task-button" onclick="deleteTask(this)">Remove Task</button>
+                </li>
+            </ul>
+
+            <div class="todo-input-container">
+                <input id="newTask" type="text" placeholder="Add a new task">
+                <button class="add-task-button" onclick="addTask()">Add Task</button>
             </div>
         </section>
-    </div>
+    </main>
+
     <footer>
-        <p>&copy; 2024 WebBuild Co. | <a href="#">Privacy Policy</a></p>
+        <p>&copy; 2024 Ngee Ann Polytechnic. All rights reserved.</p>
     </footer>
+
+    <script>
+        function addTask() {
+            const task = document.getElementById("newTask").value;
+            if (task) {
+                const list = document.getElementById("todoList");
+                console.log(list.childElementCount);
+                console.log(list.firstElementChild.tagName);
+
+                if ((list.childElementCount == 1) && (list.firstElementChild.tagName != "LI")){
+
+                    list.firstElementChild.remove();
+                }
+                const listItem = document.createElement("li");
+                listItem.innerHTML = `
+                    <input type="checkbox"> ${task}
+                    <button class="rem-task-button" onclick="deleteTask(this)">Remove Task</button>
+                `;
+                list.appendChild(listItem);
+                document.getElementById("newTask").value = "";
+            }
+        }
+        function deleteTask(button) {
+
+            const taskItem = button.parentElement;
+            const parent = taskItem.parentElement;
+            
+            taskItem.remove();
+            console.log(parent.childElementCount)
+            if (parent.childElementCount == 0){
+                parent.innerHTML=`
+                <span>No tasks :)</span>
+                `;
+
+            }
+                
+        }
+        
+    </script>
 </body>
+
 </html>
+
+
+
+
+
+
+
+
