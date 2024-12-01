@@ -8,10 +8,27 @@
 </head>
 <body>
 
+
+
 <header>
     <h1>Timetable</h1>
-    <p id="current-day">Monday, 25 November</p>
+    <p><span id="day"></span></p>
 </header>
+
+
+<script>
+    // JavaScript to get today's day
+    const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+    const months = [
+    "January", "February", "March", "April", "May", "June", 
+    "July", "August", "September", "October", "November", "December"
+];
+    const today = new Date();
+    const day = today.getDate(); // Day of the month
+    const month = today.getMonth(); // Month (0-indexed, so add 1)
+    document.getElementById("day").textContent = days[today.getDay()] + ", " + day + " " + months[month];
+</script>
+
 
 <nav>
     <a href="index.html">Home</a>
@@ -19,16 +36,26 @@
     <a href="attendance.html">Attendance</a>
     <a href="homework.html">Homework Due</a>
 </nav>
+    <!-- <button class="l-arrow-button">prev</button>    
+    <button class="r-arrow-button">next</button> -->
 
-<div class="date-selector">
-    <button onclick="updateActive(this); updateSchedule('Monday')">Mon 25</button>
-    <button onclick="updateActive(this); updateSchedule('Tuesday')">Tue 26</button>
-    <button onclick="updateActive(this); updateSchedule('Wednesday')">Wed 27</button>
-    <button class="active" onclick="updateActive(this); updateSchedule('Thursday')">Thu 28</button>
-    <button onclick="updateActive(this); updateSchedule('Friday')">Fri 29</button>
-    <button onclick="updateActive(this); updateSchedule('Saturday')">Sat 30</button>
-    <button onclick="updateActive(this); updateSchedule('Sunday')">Sun 31</button>
+<div class="date-selector">  
+    <button onclick="updateActive(this); updateSchedule(0)">Mon </button>
+    <button onclick="updateActive(this); updateSchedule(1)">Tue </button>
+    <button onclick="updateActive(this); updateSchedule(2)">Wed </button>
+    <button onclick="updateActive(this); updateSchedule(3)">Thu </button>
+    <!-- <button class="active" onclick="updateActive(this); updateSchedule('Thursday')">Thu </button> -->
+    <button onclick="updateActive(this); updateSchedule(4)">Fri </button>
+    <button onclick="updateActive(this); updateSchedule(5)">Sat </button>
+    <button onclick="updateActive(this); updateSchedule(6)">Sun </button>
 </div>
+
+
+<script> 
+    const dow = (today.getDay()+6)%7;
+    const buttons = document.querySelectorAll('.date-selector button');
+    buttons[dow].className = "active";
+</script>
 
 
 <div class="schedule" id="schedule">
@@ -43,20 +70,21 @@
 </div>
 <script>
     const schedules = {
-        Monday: [
+        // 0 = mon 1 = tue ...
+        0: [
             { time: "9:00 AM - 10:00 AM", subject: "Math Lecture", location: "BLK 21 #03-05", duration: "1h" },
             { time: "10:00 AM - 12:00 PM", subject: "Programming", location: "BLK 27 #04-02", duration: "2h" },
         ],
-        Tuesday: [
+        1: [
             { time: "11:00 AM - 1:00 PM", subject: "Physics", location: "BLK 25 #02-01", duration: "2h" },
         ],
-        Wednesday: [
+        2: [
             { time: "1:00 PM - 3:00 PM", subject: "Chemistry", location: "BLK 19 #01-01", duration: "2h" },
         ],
-        Thursday: [
+        3: [
             { time: "2:00 PM - 4:00 PM", subject: "Front-End Development", location: "BLK 27 #04-02", duration: "2h" },
         ],
-        Friday: [
+        4: [
             { time: "9:00 AM - 11:00 AM", subject: "Group Project", location: "BLK 22 #02-03", duration: "2h" },
         ],
     };
@@ -70,7 +98,6 @@
     function updateSchedule(day) {
         const scheduleDiv = document.getElementById("schedule");
         scheduleDiv.innerHTML = ""; // Clear existing schedule
-
         if (schedules[day]) {
             schedules[day].forEach(item => {
                 const scheduleItem = `
@@ -88,7 +115,7 @@
     }
 
     // Initialize with Thursday's schedule as it's currently active
-    updateSchedule("Thursday");
+    updateSchedule(dow);
 </script>
 
 

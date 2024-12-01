@@ -99,6 +99,24 @@
         footer a:hover {
             text-decoration: underline;
         }
+
+        /* footer {
+            text-align: center;
+            padding: 1rem;
+            background: #333333; 
+            color: #e6e6e6;
+            margin-top: 2rem;
+            border-top: 2px solid #6f67ab;
+        }
+
+        footer a {
+            color: #6f67ab;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        } */
     
 
         /*break*/
@@ -153,23 +171,7 @@
             color: #e6e6e6; /* Light gray for descriptions */
         }
 
-        footer {
-            text-align: center;
-            padding: 1rem;
-            background: #333333; /* Darker footer for consistency */
-            color: #e6e6e6;
-            margin-top: 2rem;
-            border-top: 2px solid #6f67ab; /* Accent color */
-        }
 
-        footer a {
-            color: #6f67ab;
-            text-decoration: none;
-        }
-
-        footer a:hover {
-            text-decoration: underline;
-        }
 
         @media (max-width: 768px) {
             .feature-card {
@@ -189,7 +191,26 @@
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
         } */
 
-
+        .l-arrow-button {
+            display:flex;
+            float: left;    
+            background: #262626; /* Matches the darker shade */
+            border: 1px solid #444; /* Subtle border */
+            border-radius: 5px;
+            color: #e6e6e6; /* Light gray text */
+            cursor: pointer;
+            transition: background 0.3s, color 0.3s; 
+        }
+        .r-arrow-button {
+            display:flex;
+            float: right;     
+            background: #262626; /* Matches the darker shade */
+            border: 1px solid #444; /* Subtle border */
+            border-radius: 5px;
+            color: #e6e6e6; /* Light gray text */
+            cursor: pointer;
+            transition: background 0.3s, color 0.3s;
+        }
         .date-selector {
             display: flex;
             justify-content: space-between;
