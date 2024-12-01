@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Homework Due</title>
+    <title>Homework To-Do List</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
-        <h1>Homework Due</h1>
+        <h1>Homework To-Do List</h1>
     </header>
     <nav>
         <a href="index.html">Home</a>
@@ -16,30 +16,30 @@
         <a href="attendance.html">Attendance</a>
     </nav>
     <div class="container">
-        <section>
-            <h2>Track Your Homework</h2>
-            <p>Keep track of your assignments and due dates to stay on top of your workload!</p>
-            <table>
-                <tr>
-                    <th>Subject</th>
-                    <th>Assignment</th>
-                    <th>Due Date</th>
-                </tr>
-                <tr>
-                    <td>Mathematics</td>
-                    <td>Algebra Worksheet</td>
-                    <td>03/11/2024</td>
-                </tr>
-                <tr>
-                    <td>Computer Science</td>
-                    <td>Project Proposal</td>
-                    <td>05/11/2024</td>
-                </tr>
-            </table>
+        <section class="to-do-section">
+            <h2>Your Tasks</h2>
+            <p>Stay organized and track your homework effectively.</p>
+            <div class="to-do-list">
+                <div class="task-item">
+                    <h3>Mathematics</h3>
+                    <p>Assignment: Algebra Worksheet</p>
+                    <p>Due Date: <span class="due-date">03/11/2024</span></p>
+                </div>
+                <div class="task-item">
+                    <h3>Computer Science</h3>
+                    <p>Assignment: Project Proposal</p>
+                    <p>Due Date: <span class="due-date">05/11/2024</span></p>
+                </div>
+                <div class="task-item">
+                    <h3>History</h3>
+                    <p>Assignment: Essay on World War II</p>
+                    <p>Due Date: <span class="due-date">10/11/2024</span></p>
+                </div>
+            </div>
         </section>
     </div>
     <footer>
-        <p>&copy; 2024 WebBuild Co.</p>
+        <p>&copy; 2024 WebBuild Co. | <a href="#">Privacy Policy</a></p>
     </footer>
 </body>
 </html>

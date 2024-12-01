@@ -6,13 +6,31 @@
             background-color: #1a1a1a; /* Matches dark background of the index page */
             color: #e6e6e6; /* Light gray for readability */
         }
-        header {
-            background-color: #333333; /* Dark background for header */
-            color: #ffffff; /* White text for contrast */
+        
+        /* header {
+            background-color: #333333; 
+            color: #ffffff; 
             padding: 1rem 2rem;
             text-align: center;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+        } */
+        header {
+            background-image: url('images/whatsapp bg.jpg'); /* Your background image */
+            background-size: cover;
+            background-position: center;
+            color: #ffffff; /* White text for contrast */
+            padding: 2rem 2rem;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5); /* Subtle shadow for depth */
         }
+            /* header {
+            background-color: #262626; 
+            color: #ffffff; 
+            padding: 1rem 2rem;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5); 
+        }  */
+
         nav {
             display: flex;
             justify-content: space-around;
@@ -83,43 +101,18 @@
         }
     
 
+        /*break*/
 
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #1a1a1a; /* Matches the dark background of the image */
-            color: #e6e6e6; /* Light gray for readability */
-        }
 
-        header {
-            background-image: url('images/whatsapp bg.jpg'); /* Your background image */
-            background-size: cover;
-            background-position: center;
-            color: #ffffff; /* White text for contrast */
-            padding: 2rem 2rem;
-            text-align: center;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5); /* Subtle shadow for depth */
-        }
-
+/* 
         nav {
             display: flex;
             justify-content: space-around;
-            background-color: #333333; /* Darker shade for navbar */
+            background-color: #333333; 
             padding: 0.5rem 0;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-        }
+        } */
 
-        nav a {
-            color: #bebebe; /* Bright yellow for visibility and harmony with the theme */
-            text-decoration: none;
-            font-size: 1rem;
-            transition: color 0.3s;
-        }
-
-        nav a:hover {
-            color: #ffffff; /* White for hover effect */
-        }
 
         .container {
             max-width: 1200px;
@@ -184,41 +177,18 @@
             }
         }
     
+        /*break*/
 
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #1a1a1a; /* Matches the dark background of the index.html */
-            color: #e6e6e6; /* Light gray for readability */
-        }
 
-        header {
-            background-color: #262626; /* Slightly lighter dark shade */
-            color: #ffffff; /* White text for contrast */
-            padding: 1rem 2rem;
-            text-align: center;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5); /* Subtle shadow for depth */
-        }
 
-        nav {
+        /* nav {
             display: flex;
             justify-content: space-around;
-            background-color: #333333; /* Darker shade for navbar */
+            background-color: #333333; 
             padding: 0.5rem 0;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-        }
+        } */
 
-        nav a {
-            color: #bebebe; /* Matches navbar link color in index.html */
-            text-decoration: none;
-            font-size: 1rem;
-            transition: color 0.3s;
-        }
-
-        nav a:hover {
-            color: #ffffff; /* White for hover effect */
-        }
 
         .date-selector {
             display: flex;
@@ -302,4 +272,6 @@
         .bottom-nav a:hover {
             color: #ffffff; /* White for hover effect */
         }
+
+        
     
